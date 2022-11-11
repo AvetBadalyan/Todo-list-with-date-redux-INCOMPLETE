@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import DailyTask from "../../Components/DailyTask/DailyTask";
 import "./SingleTask.css";
 
 export default function SingleTask() {
-    const todoList = useSelector((store) => store.SingleTaskSlice);
     let { oneDay } = useParams();
+    const dailyList = useSelector((store) => store.homeSlice.value[oneDay]);
+    console.log("Log dailyList ::: ", dailyList);
 
     return (
         <div className="daily-todo-page">
@@ -15,13 +16,11 @@ export default function SingleTask() {
                 </Link>
                 <h1>{oneDay}</h1>
                 <div className="daily-todo-list">
-                    {Object.keys(todoList).map((date) => {
-                        if (date === oneDay) {
-                            return todoList[date].map((task) => (
-                                <div>{task.taskName}</div>
-                            ));
-                        }
-                    })}
+                    {dailyList[0] &&
+                        dailyList.map((item) => {
+                            item = { ...item, date: oneDay };
+                            return <DailyTask key={item.id} item={item} />;
+                        })}
                 </div>
             </div>
         </div>

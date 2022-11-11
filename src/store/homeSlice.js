@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     value: {
-        "2019-06-01": [
+        "2019-06-02": [
             {
                 id: 1,
                 taskName: "go to gym",
@@ -18,7 +18,7 @@ const initialState = {
                 isCompleted: false,
             },
         ],
-        "2020-06-01": [
+        "2020-06-03": [
             {
                 id: 2,
                 taskName: "go to store",
@@ -62,47 +62,30 @@ export const homeSlice = createSlice({
             if (payload) state.value = payload;
         },
         addNewDate(state, { payload }) {
-			console.log('Log payload ::: ', payload)
             const { date, content } = payload;
-            state.value = { ...state.value, [date]: [{content}] };
+
+            if (date && content.taskName) {
+				if (!(state.value[date])) {
+					state.value[date] = []
+				}
+                state.value[date].push(content);
+            }
         },
         removeDate(state, { payload }) {
             const { date } = payload;
         },
 
         // ===========================================
-
-        addTask(state, { payload }) {
-            state.value = [
-                ...state.value,
-                {
-                    id: Math.random(),
-                    taskName: payload.taskName,
-                    isCompleted: false,
-                },
-            ];
-        },
+		deleteTask(state, {payload}) {
+			console.log('Log payload ::: ', payload)
+			console.log('Log state.value[payload.date] ::: ', state.value)
+			state[payload.date].filter(task => task.id !== payload.taskID)
+		},
         toggleState(state, { payload }) {
-            state.value = state.value.map((task) => {
-                if (task.id === payload.taskID) {
-                    return {
-                        ...task,
-                        isCompleted: !task.isCompleted,
-                    };
-                }
-                return task;
-            });
+            
         },
         editTask(state, { payload }) {
-            state.value = state.value.map((task) => {
-                if (task.id === payload.taskID) {
-                    return {
-                        ...task,
-                        taskName: payload.taskName,
-                    };
-                }
-                return task;
-            });
+            
         },
     },
 });
@@ -111,7 +94,7 @@ export const {
     initData,
     addNewDate,
     removeDate,
-
+	deleteTask,
     editTask,
     addTask,
     toggleState,
