@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="single-task" element={<SingleTask />} />
+        <Route path=":oneDay" element={<SingleTask />} />
       </Routes>
     </BrowserRouter>
   );

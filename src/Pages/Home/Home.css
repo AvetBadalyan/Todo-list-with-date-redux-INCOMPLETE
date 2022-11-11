@@ -1,0 +1,14 @@
+.home-page {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.todo-input-container {
+  width: 660px;
+  height: 450px;
+  border: 1px solid red;
+}
+
+
