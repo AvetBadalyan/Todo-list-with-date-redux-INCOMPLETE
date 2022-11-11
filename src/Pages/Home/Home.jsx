@@ -7,8 +7,8 @@ import "./Home.css";
 export default function Home() {
   const todoList = useContext(datesContext);
   console.log(todoList, "todo list");
-    const dates = Object.keys(todoList);
-    console.log(dates);
+  const dates = Object.keys(todoList);
+  console.log(dates);
 
   return (
     <div className="home-page">
@@ -20,11 +20,14 @@ export default function Home() {
         </div>
 
         <div className="dates-container">
-          {dates.map((date) => (
-            <Link key={Math.random()} to={date}>
-              <div>{date}</div>
-            </Link>
-          ))}
+          Dates
+          <div className="dates">
+            {dates.map((date) => (
+              <Link key={Math.random()} to={date}>
+                <div className="single-date-in-home">{date}</div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

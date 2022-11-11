@@ -1,0 +1,11 @@
+.daily-todo-list-container {
+  border: 1px solid gray;
+  width: 660px;
+}
+
+.daily-todo-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

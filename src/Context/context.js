@@ -7,6 +7,16 @@ const initialState = {
       taskName: "go to gym",
       isCompleted: false,
     },
+    {
+      id: 11,
+      taskName: "go to right",
+      isCompleted: false,
+    },
+    {
+      id: 111,
+      taskName: "go to left",
+      isCompleted: false,
+    },
   ],
   "2020-06-01": [
     {
@@ -14,11 +24,31 @@ const initialState = {
       taskName: "go to store",
       isCompleted: false,
     },
+    {
+      id: 11,
+      taskName: "go to right",
+      isCompleted: false,
+    },
+    {
+      id: 111,
+      taskName: "go to left",
+      isCompleted: false,
+    },
   ],
   "2022-06-01": [
     {
       id: 3,
       taskName: "go home",
+      isCompleted: false,
+    },
+    {
+      id: 11,
+      taskName: "go to right",
+      isCompleted: false,
+    },
+    {
+      id: 111,
+      taskName: "go to left",
       isCompleted: false,
     },
   ],
