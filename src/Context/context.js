@@ -59,7 +59,10 @@ export const datesContext = createContext();
 export default function DateProvider({ children }) {
   const [todoList, setTodoList] = useState(initialState);
 
+  console.log("context todos",todoList)
   return (
-    <datesContext.Provider value={todoList}>{children}</datesContext.Provider>
+    <datesContext.Provider value={[todoList, setTodoList]}>
+      {children}
+    </datesContext.Provider>
   );
 }
