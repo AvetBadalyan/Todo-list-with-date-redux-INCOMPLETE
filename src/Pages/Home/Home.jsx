@@ -1,22 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Form from "../../Components/Form/Form";
+import { datesContext } from "../../Context/context";
 import "./Home.css";
 
 export default function Home() {
-  const mockData = ["2019-06-01", "2020-06-01", "2022-06-01"];
-  const mockTodo = {
-    "2019-06-01": [
-      {
-        id: 1,
-        task: "go to gym",
-        isCompleted: false,
-      },
-    ],
-  };
-
-  const [dates, setDates] = useState(mockData);
-  const [todoList, setTodoList] = useState(mockTodo);
+  const todoList = useContext(datesContext);
+  console.log(todoList, "todo list");
+    const dates = Object.keys(todoList);
+    console.log(dates);
 
   return (
     <div className="home-page">
