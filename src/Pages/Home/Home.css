@@ -9,28 +9,34 @@
   width: 660px;
   height: 450px;
   border: 1px solid gray;
+  border-radius: 12px;
+  padding: 12px;
 }
 
 .new-task-container {
   background-color: gray;
   display: flex;
   flex-direction: column;
+  padding: 12px;
+  border-radius: 12px;
 }
 
 .dates-container {
-  border: 1px solid red;
+  padding: 12px;
   background-color: gray;
-margin: 20px 0;
+  margin: 20px 0;
 }
 
 .single-date-in-home {
   height: 40px;
-  border: 1px solid red;
+  border: 1px solid gray;
+  border-radius: 12px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: white;
   margin: 10px 0;
+  padding: 0 12px;
 }
 
 a {
