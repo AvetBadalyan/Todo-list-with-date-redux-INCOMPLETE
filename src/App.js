@@ -4,14 +4,14 @@ import Home from "./Pages/Home/Home";
 import SingleTask from "./Pages/singleTask/SingleTask";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/:oneDay" element={<SingleTask />} />
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:oneDay" element={<SingleTask />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

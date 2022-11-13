@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useNavigate } from "react-router-dom";
 const initialState = {
   "2019-06-02": [
     {
@@ -59,8 +58,6 @@ export const homeSlice = createSlice({
   reducers: {
     addNewDate(state, { payload }) {
       const { date, content } = payload;
-
-      console.log("state ::: ", state);
       if (date && content.taskName) {
         if (!state[date]) {
           state[date] = [];
@@ -71,12 +68,12 @@ export const homeSlice = createSlice({
 
     // ===========================================
     deleteTask(state, { payload }) {
-      console.log("Log payload ::: ", payload);
       let index = state[payload.date].findIndex(
         (task) => task.id === payload.id
       );
       state[payload.date].splice(index, 1);
     },
+
     toggleState(state, { payload }) {},
     editTask(state, { payload }) {},
   },

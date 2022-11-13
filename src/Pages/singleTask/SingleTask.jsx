@@ -6,7 +6,6 @@ import "./SingleTask.css";
 export default function SingleTask() {
   let { oneDay } = useParams();
   const dailyList = useSelector((store) => store.homeSlice[oneDay]);
-  console.log("Log dailyList ::: ", dailyList);
 
   return (
     <div className="daily-todo-page">
