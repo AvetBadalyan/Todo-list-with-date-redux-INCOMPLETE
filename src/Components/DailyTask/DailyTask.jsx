@@ -2,14 +2,14 @@ import { useDispatch } from "react-redux";
 import { deleteTask } from "../../store/homeSlice";
 import "./DailyTask.css";
 
-export default function DailyTask({ item }) {
+export default function DailyTask({ item, oneDay }) {
   const dispatch = useDispatch();
 
   function removeTask() {
     dispatch(
       deleteTask({
-        taskID: item.id,
-        date: item.date,
+        id: item.id,
+        date: oneDay,
       })
     );
   }
