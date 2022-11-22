@@ -3,7 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-    background: linear-gradient(to right, #868f96 0%, #596164 100%);
+  background: url("./../../assets/BG\ to-do-list.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .todo-input-container {
@@ -16,7 +19,7 @@
 }
 
 .new-task-container {
-  background-color: gray;
+  background: rgb(186, 186, 186);
   display: flex;
   flex-direction: column;
   padding: 12px;
@@ -25,8 +28,9 @@
 
 .dates-container {
   padding: 12px;
-  background-color: gray;
+  background: rgb(186, 186, 186);
   margin: 20px 0;
+  border-radius: 12px;
 }
 
 .single-date-in-home {

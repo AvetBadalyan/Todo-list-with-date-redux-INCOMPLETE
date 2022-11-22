@@ -15,5 +15,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #868f96 0%, #596164 100%);
+  background: url("./../../assets/BG\ to-do-list\ 2");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -70,13 +70,21 @@ export const homeSlice = createSlice({
 
     // ===========================================
     deleteTask(state, { payload }) {
- 
       state[payload.date] = state[payload.date].filter(
         (task) => task.id !== payload.id
       );
     },
-    
-    toggleState(state, { payload }) {},
+
+    // yes asi es filtri logikayov anenq porci de nayi
+
+    toggleState(state, { payload }) {
+      state[payload.date] = state[payload.date].map((task) => {
+        if (task.id === payload.id) {
+          task.isCompleted = payload.isCompleted;
+        }
+        return task;
+      });
+    },
     editTask(state, { payload }) {},
   },
 });
