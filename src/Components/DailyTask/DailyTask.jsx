@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   deleteTask,
   editTask,
@@ -34,13 +34,13 @@ export default function DailyTask({ item, oneDay }) {
   function editHandler() {
     if (editableText.current.readOnly) {
       editableText.current.readOnly = false;
-          dispatch(
-            editTask({
-              id: item.id,
-              isInEditMode: true,
-              date: oneDay,
-            })
-          );
+      dispatch(
+        editTask({
+          id: item.id,
+          isInEditMode: true,
+          date: oneDay,
+        })
+      );
     } else {
       editableText.current.readOnly = true;
       dispatch(
@@ -48,11 +48,10 @@ export default function DailyTask({ item, oneDay }) {
           id: item.id,
           date: oneDay,
           taskName: editableText.current.value,
-          isInEditMode:false 
+          isInEditMode: false,
         })
       );
     }
-
   }
 
   return (

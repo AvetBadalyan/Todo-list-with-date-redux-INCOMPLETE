@@ -4,15 +4,14 @@
   align-items: center;
 }
 
-.form input[type="text"],
-button {
+.form input[type="text"] {
   border-radius: 12px;
   padding: 12px;
   text-decoration: none;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
-  color: #3a85f7;
+  color: rgba(0, 120, 212, 1);
   max-width: 70%;
 }
 

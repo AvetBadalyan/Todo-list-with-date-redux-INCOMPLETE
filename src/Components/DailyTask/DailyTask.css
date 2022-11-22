@@ -1,23 +1,25 @@
 .single-task {
-  border: 1px solid gray;
+  border: 1px solid rgba(0, 120, 212, 1);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin: 12px auto;
-  padding:4px  12px;
+  padding: 4px 12px;
   gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .single-task input[type="text"] {
-width: 50%;
+  width: 60%;
 }
 
 p {
   font-size: 20px;
 }
 
-.completed p {
+.completed input[type="text"] {
   text-decoration: line-through;
 }
 

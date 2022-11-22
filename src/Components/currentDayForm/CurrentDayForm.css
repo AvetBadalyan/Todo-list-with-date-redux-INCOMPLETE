@@ -5,8 +5,7 @@
   padding-right: 12px;
 }
 
-input,
-button {
+input {
   border-radius: 12px;
   padding: 12px;
   text-decoration: none;
@@ -14,7 +13,7 @@ button {
   font-size: 20px;
   line-height: 24px;
   color: #3a85f7;
-  max-width: 80%;
+  max-width: 83%;
 }
 
 .current-day-form button {

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="home-page">
       <div className="todo-input-container">
-        <h1>To do list</h1>
+        <h1>Avet's To do list app</h1>
         <div className="new-task-container">
           <h1>New task</h1>
           <Form />

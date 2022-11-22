@@ -24,6 +24,17 @@ code {
 
 button {
   cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 12px;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgba(0, 120, 212, 1);
+}
+
+button:hover {
+  background-color: rgba(0, 120, 212, 1);
+  color: white;
 }
 
 button:active {

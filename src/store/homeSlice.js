@@ -69,6 +69,11 @@ export const homeSlice = createSlice({
         return task;
       });
     },
+    clearCompletedHandler(state, { payload }) {
+       state[payload.date] = state[payload.date].filter(
+         (task) => !task.isCompleted
+       );
+    }
   },
 });
 
@@ -81,5 +86,6 @@ export const {
   addTask,
   toggleState,
   saveTask,
+  clearCompletedHandler,
 } = homeSlice.actions;
 export default homeSlice.reducer;
