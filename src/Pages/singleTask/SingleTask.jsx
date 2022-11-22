@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import CurrentDayForm from "../../Components/currentDayForm/CurrentDayForm";
 import DailyTask from "../../Components/DailyTask/DailyTask";
-import { clearCompletedHandler } from "../../store/homeSlice";
+import { clearCompletedHandler, deleteAllHandler } from "../../store/homeSlice";
 import "./SingleTask.css";
 
 export default function SingleTask() {
@@ -18,7 +18,15 @@ export default function SingleTask() {
           date: oneDay,
         })
       );
-    }
+  }
+  
+      function deleteAll() {
+        dispatch(
+          deleteAllHandler({
+            date: oneDay,
+          })
+        );
+      }
 
   return (
     <div className="daily-todo-page">
@@ -44,7 +52,7 @@ export default function SingleTask() {
           </div>
           <div className="clear-buttons">
             <button onClick={clearCompleted}>Clear completed</button>
-            <button>Delete All</button>
+            <button onClick={deleteAll}>Delete All</button>
           </div>
         </div>
       </div>
