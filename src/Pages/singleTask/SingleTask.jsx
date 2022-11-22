@@ -8,6 +8,8 @@ export default function SingleTask() {
   let { oneDay } = useParams();
   const dailyList = useSelector((store) => store.homeSlice[oneDay]);
 
+  const completed = dailyList.filter((item) => item.isCompleted);
+
   return (
     <div className="daily-todo-page">
       <div className="daily-todo-list-container">
@@ -23,6 +25,9 @@ export default function SingleTask() {
             dailyList.map((item) => (
               <DailyTask key={item.id} item={item} oneDay={oneDay} />
             ))}
+        </div>
+        <div className="todo-footer">
+          {completed.length}/{dailyList.length}
         </div>
       </div>
     </div>

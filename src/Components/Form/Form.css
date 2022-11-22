@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-input,
+input[type="text"],
 button {
   border-radius: 12px;
   padding: 12px;
@@ -13,4 +13,9 @@ button {
   font-size: 20px;
   line-height: 24px;
   color: #3a85f7;
+  max-width: 70%;
+}
+
+input[type="date"] {
+  width: 30%;
 }
