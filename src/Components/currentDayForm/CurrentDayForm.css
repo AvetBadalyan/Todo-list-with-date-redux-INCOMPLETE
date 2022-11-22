@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 12px;
 }
 
 input,
@@ -13,8 +14,13 @@ button {
   font-size: 20px;
   line-height: 24px;
   color: #3a85f7;
+  max-width: 80%;
 }
 
 .current-day-form button {
   width: 80px;
+}
+
+.current-day-form input {
+  flex: 1;
 }

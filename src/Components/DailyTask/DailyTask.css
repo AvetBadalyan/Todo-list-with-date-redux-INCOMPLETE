@@ -5,10 +5,12 @@
   justify-content: space-between;
   align-items: center;
   margin: 12px auto;
+  padding:4px  12px;
+  gap: 10px;
 }
 
-.single-task button {
-  width: 80px;
+.single-task input[type="text"] {
+width: 50%;
 }
 
 p {
@@ -17,4 +19,9 @@ p {
 
 .completed p {
   text-decoration: line-through;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
 }

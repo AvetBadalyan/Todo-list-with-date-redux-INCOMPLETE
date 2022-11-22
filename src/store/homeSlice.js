@@ -5,50 +5,19 @@ const initialState = {
       id: 1,
       taskName: "go to gym",
       isCompleted: false,
+      isInEditMode: false,
     },
     {
       id: 11,
       taskName: "go to right",
       isCompleted: false,
+      isInEditMode: false,
     },
     {
       id: 111,
       taskName: "go to left",
       isCompleted: false,
-    },
-  ],
-  "2020-06-03": [
-    {
-      id: 2,
-      taskName: "go to store",
-      isCompleted: false,
-    },
-    {
-      id: 11,
-      taskName: "go to right",
-      isCompleted: false,
-    },
-    {
-      id: 111,
-      taskName: "go to left",
-      isCompleted: false,
-    },
-  ],
-  "2022-06-01": [
-    {
-      id: 3,
-      taskName: "go home",
-      isCompleted: false,
-    },
-    {
-      id: 11,
-      taskName: "go to right",
-      isCompleted: false,
-    },
-    {
-      id: 111,
-      taskName: "go to left",
-      isCompleted: false,
+      isInEditMode: false,
     },
   ],
 };
@@ -58,8 +27,6 @@ export const homeSlice = createSlice({
   reducers: {
     addNewDate(state, { payload }) {
       const { date, content } = payload;
-
-      console.log("state ::: ", state);
       if (date && content.taskName) {
         if (!state[date]) {
           state[date] = [];
@@ -85,7 +52,23 @@ export const homeSlice = createSlice({
         return task;
       });
     },
-    editTask(state, { payload }) {},
+    editTask(state, { payload }) {
+      state[payload.date] = state[payload.date].map((task) => {
+        if (task.id === payload.id) {
+          task.isInEditMode = payload.isInEditMode;
+        }
+        return task;
+      });
+    },
+    saveTask(state, { payload }) {
+      state[payload.date] = state[payload.date].map((task) => {
+        if (task.id === payload.id) {
+          task.taskName = payload.taskName;
+          task.isInEditMode = payload.isInEditMode;
+        }
+        return task;
+      });
+    },
   },
 });
 
@@ -97,5 +80,6 @@ export const {
   editTask,
   addTask,
   toggleState,
+  saveTask,
 } = homeSlice.actions;
 export default homeSlice.reducer;

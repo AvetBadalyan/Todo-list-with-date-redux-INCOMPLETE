@@ -20,7 +20,10 @@ export default function Home() {
           <div className="dates">
             {Object.keys(todoList).map((date) => (
               <Link key={Math.random()} to={date}>
-                <div className="single-date-in-home">{date}</div>
+                <div className="single-date-in-home">
+                  <div>{date}</div>
+                  <div>{todoList[date].length} tasks</div>
+                </div>
               </Link>
             ))}
           </div>

@@ -1,11 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTask, toggleState } from "../../store/homeSlice";
+import {
+  deleteTask,
+  editTask,
+  toggleState,
+  saveTask,
+} from "../../store/homeSlice";
 import "./DailyTask.css";
+import { useRef } from "react";
 
 export default function DailyTask({ item, oneDay }) {
   const dispatch = useDispatch();
+  const editableText = useRef();
   const isCompleted = item.isCompleted;
-  console.log(isCompleted, "isCompleted");
 
   function removeTask() {
     dispatch(
@@ -25,11 +31,48 @@ export default function DailyTask({ item, oneDay }) {
     );
   }
 
+  function editHandler() {
+    if (editableText.current.readOnly) {
+      editableText.current.readOnly = false;
+          dispatch(
+            editTask({
+              id: item.id,
+              isInEditMode: true,
+              date: oneDay,
+            })
+          );
+    } else {
+      editableText.current.readOnly = true;
+      dispatch(
+        saveTask({
+          id: item.id,
+          date: oneDay,
+          taskName: editableText.current.value,
+          isInEditMode:false 
+        })
+      );
+    }
+
+  }
+
   return (
     <div className={isCompleted ? "single-task completed" : "single-task"}>
-      <input type="checkbox" checked={isCompleted} onChange={checkHandler} />
-      <p>{item.taskName}</p>
-      <button onClick={removeTask}>delete</button>
+      <input
+        className="checkbox"
+        type="checkbox"
+        checked={isCompleted}
+        onChange={checkHandler}
+      />
+      <input
+        type="text"
+        readOnly
+        defaultValue={item.taskName}
+        ref={editableText}
+      />
+      <button onClick={editHandler}>
+        {item.isInEditMode ? "Save" : "Edit"}
+      </button>
+      <button onClick={removeTask}>Delete</button>
     </div>
   );
 }
