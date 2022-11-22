@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+    background: linear-gradient(to right, #868f96 0%, #596164 100%);
 }
 
 .todo-input-container {
@@ -11,6 +12,7 @@
   border: 1px solid gray;
   border-radius: 12px;
   padding: 12px;
+  background: white;
 }
 
 .new-task-container {

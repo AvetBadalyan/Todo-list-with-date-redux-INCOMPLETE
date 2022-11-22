@@ -1,6 +1,13 @@
 .daily-todo-list-container {
   border: 1px solid gray;
   width: 500px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 .daily-todo-page {
@@ -8,9 +15,5 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-.daily-todo-list {
-  border: 1px solid gray;
-  border-radius: 12px;
+  background: linear-gradient(to right, #868f96 0%, #596164 100%);
 }

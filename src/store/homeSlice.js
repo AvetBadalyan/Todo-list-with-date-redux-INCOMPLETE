@@ -58,6 +58,8 @@ export const homeSlice = createSlice({
   reducers: {
     addNewDate(state, { payload }) {
       const { date, content } = payload;
+
+      console.log("state ::: ", state);
       if (date && content.taskName) {
         if (!state[date]) {
           state[date] = [];
@@ -68,12 +70,12 @@ export const homeSlice = createSlice({
 
     // ===========================================
     deleteTask(state, { payload }) {
-      let index = state[payload.date].findIndex(
-        (task) => task.id === payload.id
+ 
+      state[payload.date] = state[payload.date].filter(
+        (task) => task.id !== payload.id
       );
-      state[payload.date].splice(index, 1);
     },
-
+    
     toggleState(state, { payload }) {},
     editTask(state, { payload }) {},
   },
