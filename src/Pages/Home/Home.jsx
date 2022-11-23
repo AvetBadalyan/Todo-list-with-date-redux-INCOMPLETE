@@ -1,10 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Form from "../../Components/Form/Form";
+import { deleteDate } from "../../store/homeSlice";
 import "./Home.css";
 
 export default function Home() {
   const todoList = useSelector((store) => store.homeSlice);
+
+  const dispatch = useDispatch();
+
+  function deleteDateHandler(date) {
+    dispatch(
+      deleteDate({
+        date: date,
+      })
+    );
+  }
 
   return (
     <div className="home-page">
@@ -19,12 +30,15 @@ export default function Home() {
           Dates
           <div className="dates">
             {Object.keys(todoList).map((date) => (
-              <Link key={Math.random()} to={date}>
-                <div className="single-date-in-home">
-                  <div>{date}</div>
-                  <div>{todoList[date].length} tasks</div>
-                </div>
-              </Link>
+              <div key={date} className="single-date">
+                <Link to={date}>
+                  <div className="single-date-text">
+                    <div>{date}</div>
+                    <div>Number of Tasks: {todoList[date].length}</div>
+                  </div>
+                </Link>
+                <button onClick={() => deleteDateHandler(date)}>Delete</button>
+              </div>
             ))}
           </div>
         </div>

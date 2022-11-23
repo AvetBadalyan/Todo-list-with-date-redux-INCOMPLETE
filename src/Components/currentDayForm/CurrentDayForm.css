@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 12px;
 }
 
 input {
@@ -12,12 +11,16 @@ input {
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
-  color: #3a85f7;
-  max-width: 83%;
+  color: rgb(67, 9, 128);
+  max-width: 82%;
 }
 
 .current-day-form button {
   width: 80px;
+}
+
+.current-day-form button:hover {
+  background-color: rgba(130, 50, 160, 1);
 }
 
 .current-day-form input {

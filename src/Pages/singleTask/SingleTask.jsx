@@ -8,25 +8,25 @@ import "./SingleTask.css";
 export default function SingleTask() {
   let { oneDay } = useParams();
   const dailyList = useSelector((store) => store.homeSlice[oneDay]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const completed = dailyList.filter((item) => item.isCompleted);
 
-    function clearCompleted() {
-      dispatch(
-        clearCompletedHandler({
-          date: oneDay,
-        })
-      );
+  function clearCompleted() {
+    dispatch(
+      clearCompletedHandler({
+        date: oneDay,
+      })
+    );
   }
-  
-      function deleteAll() {
-        dispatch(
-          deleteAllHandler({
-            date: oneDay,
-          })
-        );
-      }
+
+  function deleteAll() {
+    dispatch(
+      deleteAllHandler({
+        date: oneDay,
+      })
+    );
+  }
 
   return (
     <div className="daily-todo-page">
@@ -38,7 +38,11 @@ export default function SingleTask() {
           <h1>{oneDay}</h1>
         </div>
 
-        <CurrentDayForm oneDay={oneDay} />
+        <div className="new-task-container">
+          <h1>New task</h1>
+
+          <CurrentDayForm oneDay={oneDay} />
+        </div>
 
         <div className="daily-todo-list">
           {dailyList[0] &&

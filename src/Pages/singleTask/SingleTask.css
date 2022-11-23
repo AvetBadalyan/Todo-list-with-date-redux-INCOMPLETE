@@ -1,26 +1,32 @@
+.daily-todo-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("./../../assets/outrun-neon-dark-background-purple-3840x2160-4523.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 12px 0;
+}
+
 .daily-todo-list-container {
   border: 1px solid gray;
-  width: 60%;
-  background: rgba(255, 255, 255, 0.7);
+  width: 50%;
+  background: rgba(255, 255, 255, 1);
+  background-color: rgba(130, 50, 160, 0.7);
   border-radius: 12px;
   padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  color: rgba(0, 120, 212, 1);
+  color: rgba(67, 9, 128, 1);
 }
 
-.daily-todo-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: url("./../../assets/BG\ to-do-list\ 2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 12px 0;
+.new-task-container h1 {
+  color: white;
+  margin: 0 auto;
 }
 
 .daily-container-header {
@@ -32,18 +38,18 @@
 
 .todo-footer {
   font-size: 20px;
+  font-weight: bolder;
   display: flex;
   justify-content: space-between;
   align-items: center;
-    gap: 12px;
+  gap: 12px;
 }
 
 .completed-number {
   background: white;
   padding: 12px;
   border-radius: 12px;
-  border: 1px solid rgba(0, 120, 212, 1);
-
+  border: 2px solid rgba(67, 9, 128, 1);
 }
 
 .clear-buttons {

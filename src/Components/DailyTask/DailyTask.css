@@ -1,5 +1,5 @@
 .single-task {
-  border: 1px solid rgba(0, 120, 212, 1);
+  border: 1px solid rgba(67, 9, 128, 1);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -8,11 +8,15 @@
   margin: 12px auto;
   padding: 4px 12px;
   gap: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(67, 9, 128, 1);
 }
 
 .single-task input[type="text"] {
   width: 60%;
+}
+
+.single-task button:hover {
+  background-color: rgba(130, 50, 160, 1);
 }
 
 p {
@@ -21,9 +25,11 @@ p {
 
 .completed input[type="text"] {
   text-decoration: line-through;
+  text-decoration-color: rgba(130, 50, 160, 1);
 }
 
 .checkbox {
   width: 20px;
   height: 20px;
+  accent-color: rgba(130, 50, 160, 1);
 }

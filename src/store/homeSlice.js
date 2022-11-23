@@ -75,6 +75,9 @@ export const homeSlice = createSlice({
     deleteAllHandler(state, { payload }) {
       state[payload.date].length = 0;
     },
+    deleteDate(state, { payload }) {
+      delete  state[payload.date];
+    },
   },
 });
 
@@ -89,5 +92,6 @@ export const {
   saveTask,
   clearCompletedHandler,
   deleteAllHandler,
+  deleteDate,
 } = homeSlice.actions;
 export default homeSlice.reducer;

@@ -11,10 +11,14 @@
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
-  color: rgba(0, 120, 212, 1);
+  color: rgba(67, 9, 128, 1);
   max-width: 70%;
 }
 
 input[type="date"] {
   width: 30%;
+}
+
+.form button:hover {
+ background-color: rgba(130, 50, 160, 1);
 }
