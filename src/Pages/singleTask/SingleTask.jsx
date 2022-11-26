@@ -33,7 +33,7 @@ export default function SingleTask() {
       <div className="daily-todo-list-container">
         <div className="daily-container-header">
           <Link to="/">
-            <button>Go back to home</button>
+            <button>Back home</button>
           </Link>
           <h1>{oneDay}</h1>
         </div>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Form from "../../Components/Form/Form";
@@ -27,19 +28,28 @@ export default function Home() {
         </div>
 
         <div className="dates-container">
-          Dates
+          <h2>Dates</h2>
           <div className="dates">
-            {Object.keys(todoList).map((date) => (
-              <div key={date} className="single-date">
-                <Link to={date}>
-                  <div className="single-date-text">
-                    <div>{date}</div>
-                    <div>Number of Tasks: {todoList[date].length}</div>
-                  </div>
-                </Link>
-                <button onClick={() => deleteDateHandler(date)}>Delete</button>
-              </div>
-            ))}
+            {Object.keys(todoList)
+              .sort((a, b) => {
+                const dateA = new Date(a);
+                const dateB = new Date(b);
+
+                return dateA - dateB;
+              })
+              .map((date) => (
+                <div key={date} className="single-date">
+                  <Link to={date}>
+                    <div className="single-date-text">
+                      <div>{date}</div>
+                      <div>Total: {todoList[date].length}</div>
+                    </div>
+                  </Link>
+                  <button onClick={() => deleteDateHandler(date)}>
+                    Delete
+                  </button>
+                </div>
+              ))}
           </div>
         </div>
       </div>

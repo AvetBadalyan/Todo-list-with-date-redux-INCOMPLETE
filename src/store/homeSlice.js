@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
+let initialState = {
   "2019-06-02": [
     {
       id: 1,
@@ -7,20 +7,9 @@ const initialState = {
       isCompleted: false,
       isInEditMode: false,
     },
-    {
-      id: 11,
-      taskName: "go to right",
-      isCompleted: false,
-      isInEditMode: false,
-    },
-    {
-      id: 111,
-      taskName: "go to left",
-      isCompleted: false,
-      isInEditMode: false,
-    },
   ],
 };
+
 export const homeSlice = createSlice({
   name: "homeSlice",
   initialState,
@@ -31,6 +20,7 @@ export const homeSlice = createSlice({
         if (!state[date]) {
           state[date] = [];
         }
+
         state[date].push(content);
       }
     },
@@ -76,7 +66,7 @@ export const homeSlice = createSlice({
       state[payload.date].length = 0;
     },
     deleteDate(state, { payload }) {
-      delete  state[payload.date];
+      delete state[payload.date];
     },
   },
 });

@@ -56,22 +56,27 @@ export default function DailyTask({ item, oneDay }) {
 
   return (
     <div className={isCompleted ? "single-task completed" : "single-task"}>
-      <input
-        className="checkbox"
-        type="checkbox"
-        checked={isCompleted}
-        onChange={checkHandler}
-      />
-      <input
-        type="text"
-        readOnly
-        defaultValue={item.taskName}
-        ref={editableText}
-      />
-      <button onClick={editHandler}>
-        {item.isInEditMode ? "Save" : "Edit"}
-      </button>
-      <button onClick={removeTask}>Delete</button>
+      <div className="single-task-input-container">
+        <input
+          type="text"
+          readOnly
+          defaultValue={item.taskName}
+          ref={editableText}
+        />
+      </div>
+      <div className="single-task-button-container">
+        <input
+          className="checkbox"
+          type="checkbox"
+          checked={isCompleted}
+          onChange={checkHandler}
+        />
+        <button onClick={editHandler}>
+          {item.isInEditMode ? "Save" : "Edit"}
+        </button>
+
+        <button onClick={removeTask}>Delete</button>
+      </div>
     </div>
   );
 }

@@ -26,9 +26,13 @@ export default function Form() {
   return (
     <div className="input-and-button-container">
       <form className="form" onSubmit={submitHandler}>
-        <input type="text" placeholder="Type here" ref={nameRef} />
-        <input type="date" defaultValue={new Date()} ref={dateRef} />
-        <button onClick={submitHandler}> Add </button>
+        <div className="form-top">
+          <input type="text" placeholder="Type here" ref={nameRef} />
+        </div>
+        <div className="form-bottom">
+          <input type="date" className="input-date" defaultValue={new Date()} ref={dateRef} />
+          <button onClick={submitHandler}> Add </button>
+        </div>
       </form>
     </div>
   );
