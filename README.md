@@ -1,3 +1,15 @@
+## Todo list with Redux toolkit
+
+This is an app due to which you can add your tasks to complete with dates, collect them in some special day and look them daily, edit already written task if you want to, also delete some or all of them, strike with line-through the completed ones by checking the box, clear all completed ones and so on.
+With Mobile adaptation and responsive design!
+This is some kind of exercise and practice of Redux Toolkit for me as a developer.
+
+Go to WEBSITE of Todo with Redux [https://todo-list-with-redux-toolkit.web.app/](https://todo-list-with-redux-toolkit.web.app/) <br />
+
+![screenshot](./screenshots/todo-home-page.jpg)
+![screenshot](./screenshots/todo-task-page.jpg)
+![screenshot](./screenshots/todo-task-page-mobile.jpg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

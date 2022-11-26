@@ -1,14 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-let initialState = {
-  "2019-06-02": [
-    {
-      id: 1,
-      taskName: "go to gym",
-      isCompleted: false,
-      isInEditMode: false,
-    },
-  ],
-};
+let initialState = {};
 
 export const homeSlice = createSlice({
   name: "homeSlice",
