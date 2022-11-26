@@ -31,6 +31,10 @@
   padding-right: 0.75rem;
 }
 
+.daily-container-header h1 {
+  font-size: 1.5rem;
+}
+
 .todo-footer {
   font-size: 1.25rem;
   font-weight: bolder;
@@ -72,5 +76,14 @@
   }
   .clear-buttons button {
     padding: 12px 2px;
+    font-size: 1rem;
+  }
+
+  .daily-container-header h1 {
+    font-size: 1rem;
+  }
+
+  .clear-buttons {
+    padding: 4px;
   }
 }
